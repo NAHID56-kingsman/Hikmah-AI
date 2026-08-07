@@ -1,0 +1,664 @@
+[
+  {
+    "surah_no": 2,
+    "ayah_no": 152,
+    "ref": "2:152",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "فَٱذۡكُرُونِيٓ أَذۡكُرۡكُمۡ وَٱشۡكُرُواْ لِي وَلَا تَكۡفُرُونِ",
+    "english": "So remember Me; I will remember you. And be grateful to Me and do not deny Me",
+    "bangla": "সুতরাং তোমরা আমাকে স্মরণ কর, আমিও তোমাদের স্মরণ রাখবো এবং আমার কৃতজ্ঞতা প্রকাশ কর; অকৃতজ্ঞ হয়ো না।",
+    "themes": [
+      "gratitude"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 153,
+    "ref": "2:153",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱسۡتَعِينُواْ بِٱلصَّبۡرِ وَٱلصَّلَوٰةِۚ إِنَّ ٱللَّهَ مَعَ ٱلصَّـٰبِرِينَ",
+    "english": "O you who have believed, seek help through patience and prayer. Indeed, Allah is with the patient",
+    "bangla": "হে মুমিন গন! তোমরা ধৈর্য্য ও নামাযের মাধ্যমে সাহায্য প্রার্থনা কর। নিশ্চিতই আল্লাহ ধৈর্য্যশীলদের সাথে রয়েছেন।",
+    "themes": [
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 155,
+    "ref": "2:155",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "وَلَنَبۡلُوَنَّكُم بِشَيۡءٖ مِّنَ ٱلۡخَوۡفِ وَٱلۡجُوعِ وَنَقۡصٖ مِّنَ ٱلۡأَمۡوَٰلِ وَٱلۡأَنفُسِ وَٱلثَّمَرَٰتِۗ وَبَشِّرِ ٱلصَّـٰبِرِينَ",
+    "english": "And We will surely test you with something of fear and hunger and a loss of wealth and lives and fruits, but give good tidings to the patient",
+    "bangla": "এবং অবশ্যই আমি তোমাদিগকে পরীক্ষা করব কিছুটা ভয়, ক্ষুধা, মাল ও জানের ক্ষতি ও ফল-ফসল বিনষ্টের মাধ্যমে। তবে সুসংবাদ দাও সবরকারীদের।",
+    "themes": [
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 156,
+    "ref": "2:156",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "ٱلَّذِينَ إِذَآ أَصَٰبَتۡهُم مُّصِيبَةٞ قَالُوٓاْ إِنَّا لِلَّهِ وَإِنَّآ إِلَيۡهِ رَٰجِعُونَ",
+    "english": "Who, when disaster strikes them, say, \"Indeed we belong to Allah, and indeed to Him we will return",
+    "bangla": "যখন তারা বিপদে পতিত হয়, তখন বলে, নিশ্চয় আমরা সবাই আল্লাহর জন্য এবং আমরা সবাই তাঁরই সান্নিধ্যে ফিরে যাবো।",
+    "themes": [
+      "grief_and_loss",
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 157,
+    "ref": "2:157",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "أُوْلَـٰٓئِكَ عَلَيۡهِمۡ صَلَوَٰتٞ مِّن رَّبِّهِمۡ وَرَحۡمَةٞۖ وَأُوْلَـٰٓئِكَ هُمُ ٱلۡمُهۡتَدُونَ",
+    "english": "Those are the ones upon whom are blessings from their Lord and mercy. And it is those who are the [rightly] guided",
+    "bangla": "তারা সে সমস্ত লোক, যাদের প্রতি আল্লাহর অফুরন্ত অনুগ্রহ ও রহমত রয়েছে এবং এসব লোকই হেদায়েত প্রাপ্ত।",
+    "themes": [
+      "grief_and_loss",
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 186,
+    "ref": "2:186",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌۖ أُجِيبُ دَعۡوَةَ ٱلدَّاعِ إِذَا دَعَانِۖ فَلۡيَسۡتَجِيبُواْ لِي وَلۡيُؤۡمِنُواْ بِي لَعَلَّهُمۡ يَرۡشُدُونَ",
+    "english": "And when My servants ask you, [O Muhammad], concerning Me - indeed I am near. I respond to the invocation of the supplicant when he calls upon Me. So let them respond to Me [by obedience] and believe in Me that they may be [rightly] guided",
+    "bangla": "আর আমার বান্দারা যখন তোমার কাছে জিজ্ঞেস করে আমার ব্যাপারে বস্তুতঃ আমি রয়েছি সন্নিকটে। যারা প্রার্থনা করে, তাদের প্রার্থনা কবুল করে নেই, যখন আমার কাছে প্রার্থনা করে। কাজেই আমার হুকুম মান্য করা এবং আমার প্রতি নিঃসংশয়ে বিশ্বাস করা তাদের একান্ত কর্তব্য। যাতে তারা সৎপথে আসতে পারে।",
+    "themes": [
+      "loneliness"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 216,
+    "ref": "2:216",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "كُتِبَ عَلَيۡكُمُ ٱلۡقِتَالُ وَهُوَ كُرۡهٞ لَّكُمۡۖ وَعَسَىٰٓ أَن تَكۡرَهُواْ شَيۡـٔٗا وَهُوَ خَيۡرٞ لَّكُمۡۖ وَعَسَىٰٓ أَن تُحِبُّواْ شَيۡـٔٗا وَهُوَ شَرّٞ لَّكُمۡۚ وَٱللَّهُ يَعۡلَمُ وَأَنتُمۡ لَا تَعۡلَمُونَ",
+    "english": "Fighting has been enjoined upon you while it is hateful to you. But perhaps you hate a thing and it is good for you; and perhaps you love a thing and it is bad for you. And Allah Knows, while you know not",
+    "bangla": "তোমাদের উপর যুদ্ধ ফরয করা হয়েছে, অথচ তা তোমাদের কাছে অপছন্দনীয়। পক্ষান্তরে তোমাদের কাছে হয়তো কোন একটা বিষয় পছন্দসই নয়, অথচ তা তোমাদের জন্য কল্যাণকর। আর হয়তোবা কোন একটি বিষয় তোমাদের কাছে পছন্দনীয় অথচ তোমাদের জন্যে অকল্যাণকর। বস্তুতঃ আল্লাহই জানেন, তোমরা জান না।",
+    "themes": [
+      "guidance_and_decision_making"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 228,
+    "ref": "2:228",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "وَٱلۡمُطَلَّقَٰتُ يَتَرَبَّصۡنَ بِأَنفُسِهِنَّ ثَلَٰثَةَ قُرُوٓءٖۚ وَلَا يَحِلُّ لَهُنَّ أَن يَكۡتُمۡنَ مَا خَلَقَ ٱللَّهُ فِيٓ أَرۡحَامِهِنَّ إِن كُنَّ يُؤۡمِنَّ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِۚ وَبُعُولَتُهُنَّ أَحَقُّ بِرَدِّهِنَّ فِي ذَٰلِكَ إِنۡ أَرَادُوٓاْ إِصۡلَٰحٗاۚ وَلَهُنَّ مِثۡلُ ٱلَّذِي عَلَيۡهِنَّ بِٱلۡمَعۡرُوفِۚ وَلِلرِّجَالِ عَلَيۡهِنَّ دَرَجَةٞۗ وَٱللَّهُ عَزِيزٌ حَكِيمٌ",
+    "english": "Divorced women remain in waiting for three periods, and it is not lawful for them to conceal what Allah has created in their wombs if they believe in Allah and the Last Day. And their husbands have more right to take them back in this [period] if they want reconciliation. And due to the wives is similar to what is expected of them, according to what is reasonable. But the men have a degree over them [in responsibility and authority]. And Allah is Exalted in Might and Wise",
+    "bangla": "আর তালাকপ্রাপ্তা নারী নিজেকে অপেক্ষায় রাখবে তিন হায়েয পর্যন্ত। আর যদি সে আল্লাহর প্রতি এবং আখেরাত দিবসের উপর ঈমানদার হয়ে থাকে, তাহলে আল্লাহ যা তার জরায়ুতে সৃষ্টি করেছেন তা লুকিয়ে রাখা জায়েজ নয়। আর যদি সদ্ভাব রেখে চলতে চায়, তাহলে তাদেরকে ফিরিয়ে নেবার অধিকার তাদের স্বামীরা সংরক্ষণ করে। আর পুরুষদের যেমন স্ত্রীদের উপর অধিকার রয়েছে, তেমনি ভাবে স্ত্রীদেরও অধিকার রয়েছে পুরুষদের উপর নিয়ম অনুযায়ী। আর নারীরদের ওপর পুরুষদের শ্রেষ্ঠত্ব রয়েছে। আর আল্লাহ হচ্ছে পরাক্রমশালী, বিজ্ঞ।",
+    "themes": [
+      "family_and_marriage_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 2,
+    "ayah_no": 286,
+    "ref": "2:286",
+    "surah_name_ar": "البقرة",
+    "surah_name_translit": "Al-Baqarah",
+    "surah_name_en": "The Cow",
+    "surah_name_bn": "বকনা-বাছুর",
+    "arabic": "لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ لَهَا مَا كَسَبَتۡ وَعَلَيۡهَا مَا ٱكۡتَسَبَتۡۗ رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرٗا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ",
+    "english": "Allah does not charge a soul except [with that within] its capacity. It will have [the consequence of] what [good] it has gained, and it will bear [the consequence of] what [evil] it has earned. \"Our Lord, do not impose blame upon us if we have forgotten or erred. Our Lord, and lay not upon us a burden like that which You laid upon those before us. Our Lord, and burden us not with that which we have no ability to bear. And pardon us; and forgive us; and have mercy upon us. You are our protector, so give us victory over the disbelieving people",
+    "bangla": "আল্লাহ কাউকে তার সাধ্যাতীত কোন কাজের ভার দেন না, সে তাই পায় যা সে উপার্জন করে এবং তাই তার উপর বর্তায় যা সে করে। হে আমাদের পালনকর্তা, যদি আমরা ভুলে যাই কিংবা ভুল করি, তবে আমাদেরকে অপরাধী করো না। হে আমাদের পালনকর্তা! এবং আমাদের উপর এমন দায়িত্ব অর্পণ করো না, যেমন আমাদের পূর্ববর্তীদের উপর অর্পণ করেছ, হে আমাদের প্রভূ! এবং আমাদের দ্বারা ঐ বোঝা বহন করিও না, যা বহন করার শক্তি আমাদের নাই। আমাদের পাপ মোচন কর। আমাদেরকে ক্ষমা কর এবং আমাদের প্রতি দয়া কর। তুমিই আমাদের প্রভু। সুতরাং কাফের সম্প্রদায়ের বিরুদ্ধে আমাদের কে সাহায্যে কর।",
+    "themes": [
+      "financial_hardship_and_provision",
+      "illness_and_health"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 3,
+    "ayah_no": 134,
+    "ref": "3:134",
+    "surah_name_ar": "آل عمران",
+    "surah_name_translit": "Ali 'Imran",
+    "surah_name_en": "Family of Imran",
+    "surah_name_bn": "ইমরানের পরিবার",
+    "arabic": "ٱلَّذِينَ يُنفِقُونَ فِي ٱلسَّرَّآءِ وَٱلضَّرَّآءِ وَٱلۡكَٰظِمِينَ ٱلۡغَيۡظَ وَٱلۡعَافِينَ عَنِ ٱلنَّاسِۗ وَٱللَّهُ يُحِبُّ ٱلۡمُحۡسِنِينَ",
+    "english": "Who spend [in the cause of Allah] during ease and hardship and who restrain anger and who pardon the people - and Allah loves the doers of good",
+    "bangla": "যারা স্বচ্ছলতায় ও অভাবের সময় ব্যয় করে, যারা নিজেদের রাগকে সংবরণ করে আর মানুষের প্রতি ক্ষমা প্রদর্শন করে, বস্তুতঃ আল্লাহ সৎকর্মশীলদিগকেই ভালবাসেন।",
+    "themes": [
+      "anger_and_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 3,
+    "ayah_no": 139,
+    "ref": "3:139",
+    "surah_name_ar": "آل عمران",
+    "surah_name_translit": "Ali 'Imran",
+    "surah_name_en": "Family of Imran",
+    "surah_name_bn": "ইমরানের পরিবার",
+    "arabic": "وَلَا تَهِنُواْ وَلَا تَحۡزَنُواْ وَأَنتُمُ ٱلۡأَعۡلَوۡنَ إِن كُنتُم مُّؤۡمِنِينَ",
+    "english": "So do not weaken and do not grieve, and you will be superior if you are [true] believers",
+    "bangla": "আর তোমরা নিরাশ হয়ো না এবং দুঃখ করো না। যদি তোমরা মুমিন হও তবে, তোমরাই জয়ী হবে।",
+    "themes": [
+      "grief_and_loss",
+      "anxiety_and_fear"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 3,
+    "ayah_no": 159,
+    "ref": "3:159",
+    "surah_name_ar": "آل عمران",
+    "surah_name_translit": "Ali 'Imran",
+    "surah_name_en": "Family of Imran",
+    "surah_name_bn": "ইমরানের পরিবার",
+    "arabic": "فَبِمَا رَحۡمَةٖ مِّنَ ٱللَّهِ لِنتَ لَهُمۡۖ وَلَوۡ كُنتَ فَظًّا غَلِيظَ ٱلۡقَلۡبِ لَٱنفَضُّواْ مِنۡ حَوۡلِكَۖ فَٱعۡفُ عَنۡهُمۡ وَٱسۡتَغۡفِرۡ لَهُمۡ وَشَاوِرۡهُمۡ فِي ٱلۡأَمۡرِۖ فَإِذَا عَزَمۡتَ فَتَوَكَّلۡ عَلَى ٱللَّهِۚ إِنَّ ٱللَّهَ يُحِبُّ ٱلۡمُتَوَكِّلِينَ",
+    "english": "So by mercy from Allah, [O Muhammad], you were lenient with them. And if you had been rude [in speech] and harsh in heart, they would have disbanded from about you. So pardon them and ask forgiveness for them and consult them in the matter. And when you have decided, then rely upon Allah. Indeed, Allah loves those who rely [upon Him]",
+    "bangla": "আল্লাহর রহমতেই আপনি তাদের জন্য কোমল হৃদয় হয়েছেন পক্ষান্তরে আপনি যদি রাগ ও কঠিন হৃদয় হতেন তাহলে তারা আপনার কাছ থেকে বিচ্ছিন্ন হয়ে যেতো। কাজেই আপনি তাদের ক্ষমা করে দিন এবং তাদের জন্য মাগফেরাত কামনা করুন এবং কাজে কর্মে তাদের পরামর্শ করুন। অতঃপর যখন কোন কাজের সিদ্ধান্ত গ্রহণ করে ফেলেন, তখন আল্লাহ তা’আলার উপর ভরসা করুন আল্লাহ তাওয়াক্কুল কারীদের ভালবাসেন।",
+    "themes": [
+      "trust_in_allah_tawakkul"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 3,
+    "ayah_no": 173,
+    "ref": "3:173",
+    "surah_name_ar": "آل عمران",
+    "surah_name_translit": "Ali 'Imran",
+    "surah_name_en": "Family of Imran",
+    "surah_name_bn": "ইমরানের পরিবার",
+    "arabic": "ٱلَّذِينَ قَالَ لَهُمُ ٱلنَّاسُ إِنَّ ٱلنَّاسَ قَدۡ جَمَعُواْ لَكُمۡ فَٱخۡشَوۡهُمۡ فَزَادَهُمۡ إِيمَٰنٗا وَقَالُواْ حَسۡبُنَا ٱللَّهُ وَنِعۡمَ ٱلۡوَكِيلُ",
+    "english": "Those to whom hypocrites said, \"Indeed, the people have gathered against you, so fear them.\" But it [merely] increased them in faith, and they said, \"Sufficient for us is Allah, and [He is] the best Disposer of affairs",
+    "bangla": "যাদেরকে লোকেরা বলেছে যে, তোমাদের সাথে মোকাবেলা করার জন্য লোকেরা সমাবেশ করেছে বহু সাজ-সরঞ্জাম; তাদের ভয় কর। তখন তাদের বিশ্বাস আরও দৃঢ়তর হয়ে যায় এবং তারা বলে, আমাদের জন্য আল্লাহই যথেষ্ট; কতই না চমৎকার কামিয়াবীদানকারী।",
+    "themes": [
+      "trust_in_allah_tawakkul"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 3,
+    "ayah_no": 200,
+    "ref": "3:200",
+    "surah_name_ar": "آل عمران",
+    "surah_name_translit": "Ali 'Imran",
+    "surah_name_en": "Family of Imran",
+    "surah_name_bn": "ইমরানের পরিবার",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ ٱصۡبِرُواْ وَصَابِرُواْ وَرَابِطُواْ وَٱتَّقُواْ ٱللَّهَ لَعَلَّكُمۡ تُفۡلِحُونَ",
+    "english": "O you who have believed, persevere and endure and remain stationed and fear Allah that you may be successful",
+    "bangla": "হে ঈমানদানগণ! ধৈর্য্য ধারণ কর এবং মোকাবেলায় দৃঢ়তা অবলম্বন কর। আর আল্লাহকে ভয় করতে থাক যাতে তোমরা তোমাদের উদ্দেশ্য লাভে সমর্থ হতে পার।",
+    "themes": [
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 4,
+    "ayah_no": 19,
+    "ref": "4:19",
+    "surah_name_ar": "النساء",
+    "surah_name_translit": "An-Nisa",
+    "surah_name_en": "The Women",
+    "surah_name_bn": "নারী",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ لَا يَحِلُّ لَكُمۡ أَن تَرِثُواْ ٱلنِّسَآءَ كَرۡهٗاۖ وَلَا تَعۡضُلُوهُنَّ لِتَذۡهَبُواْ بِبَعۡضِ مَآ ءَاتَيۡتُمُوهُنَّ إِلَّآ أَن يَأۡتِينَ بِفَٰحِشَةٖ مُّبَيِّنَةٖۚ وَعَاشِرُوهُنَّ بِٱلۡمَعۡرُوفِۚ فَإِن كَرِهۡتُمُوهُنَّ فَعَسَىٰٓ أَن تَكۡرَهُواْ شَيۡـٔٗا وَيَجۡعَلَ ٱللَّهُ فِيهِ خَيۡرٗا كَثِيرٗا",
+    "english": "O you who have believed, it is not lawful for you to inherit women by compulsion. And do not make difficulties for them in order to take [back] part of what you gave them unless they commit a clear immorality. And live with them in kindness. For if you dislike them - perhaps you dislike a thing and Allah makes therein much good",
+    "bangla": "হে ঈমাণদারগণ! বলপূর্বক নারীদেরকে উত্তরাধিকারে গ্রহন করা তোমাদের জন্যে হালাল নয় এবং তাদেরকে আটক রেখো না যাতে তোমরা তাদেরকে যা প্রদান করেছ তার কিয়দংশ নিয়ে নাও; কিন্তু তারা যদি কোন প্রকাশ্য অশ্লীলতা করে! নারীদের সাথে সদ্ভাবে জীবন-যাপন কর। অতঃপর যদি তাদেরকে অপছন্দ কর, তবে হয়ত তোমরা এমন এক জিনিসকে অপছন্দ করছ, যাতে আল্লাহ, অনেক কল্যাণ রেখেছেন।",
+    "themes": [
+      "family_and_marriage_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 4,
+    "ayah_no": 110,
+    "ref": "4:110",
+    "surah_name_ar": "النساء",
+    "surah_name_translit": "An-Nisa",
+    "surah_name_en": "The Women",
+    "surah_name_bn": "নারী",
+    "arabic": "وَمَن يَعۡمَلۡ سُوٓءًا أَوۡ يَظۡلِمۡ نَفۡسَهُۥ ثُمَّ يَسۡتَغۡفِرِ ٱللَّهَ يَجِدِ ٱللَّهَ غَفُورٗا رَّحِيمٗا",
+    "english": "And whoever does a wrong or wrongs himself but then seeks forgiveness of Allah will find Allah Forgiving and Merciful",
+    "bangla": "যে গোনাহ, করে কিংবা নিজের অনিষ্ট করে, অতঃপর আল্লাহর কাছে ক্ষমা প্রার্থনা করে, সে আল্লাহকে ক্ষমাশীল, করুণাময় পায়।",
+    "themes": [
+      "forgiveness_and_repentance"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 8,
+    "ayah_no": 2,
+    "ref": "8:2",
+    "surah_name_ar": "الأنفال",
+    "surah_name_translit": "Al-Anfal",
+    "surah_name_en": "The Spoils of War",
+    "surah_name_bn": "যুদ্ধ-লব্ধ ধনসম্পদ",
+    "arabic": "إِنَّمَا ٱلۡمُؤۡمِنُونَ ٱلَّذِينَ إِذَا ذُكِرَ ٱللَّهُ وَجِلَتۡ قُلُوبُهُمۡ وَإِذَا تُلِيَتۡ عَلَيۡهِمۡ ءَايَٰتُهُۥ زَادَتۡهُمۡ إِيمَٰنٗا وَعَلَىٰ رَبِّهِمۡ يَتَوَكَّلُونَ",
+    "english": "The believers are only those who, when Allah is mentioned, their hearts become fearful, and when His verses are recited to them, it increases them in faith; and upon their Lord they rely",
+    "bangla": "যারা ঈমানদার, তারা এমন যে, যখন আল্লাহর নাম নেয়া হয় তখন ভীত হয়ে পড়ে তাদের অন্তর। আর যখন তাদের সামনে পাঠ করা হয় কালাম, তখন তাদের ঈমান বেড়ে যায় এবং তারা স্বীয় পরওয়ার দেগারের প্রতি ভরসা পোষণ করে।",
+    "themes": [
+      "trust_in_allah_tawakkul"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 9,
+    "ayah_no": 40,
+    "ref": "9:40",
+    "surah_name_ar": "التوبة",
+    "surah_name_translit": "At-Tawbah",
+    "surah_name_en": "The Repentance",
+    "surah_name_bn": "অনুশোচনা",
+    "arabic": "إِلَّا تَنصُرُوهُ فَقَدۡ نَصَرَهُ ٱللَّهُ إِذۡ أَخۡرَجَهُ ٱلَّذِينَ كَفَرُواْ ثَانِيَ ٱثۡنَيۡنِ إِذۡ هُمَا فِي ٱلۡغَارِ إِذۡ يَقُولُ لِصَٰحِبِهِۦ لَا تَحۡزَنۡ إِنَّ ٱللَّهَ مَعَنَاۖ فَأَنزَلَ ٱللَّهُ سَكِينَتَهُۥ عَلَيۡهِ وَأَيَّدَهُۥ بِجُنُودٖ لَّمۡ تَرَوۡهَا وَجَعَلَ كَلِمَةَ ٱلَّذِينَ كَفَرُواْ ٱلسُّفۡلَىٰۗ وَكَلِمَةُ ٱللَّهِ هِيَ ٱلۡعُلۡيَاۗ وَٱللَّهُ عَزِيزٌ حَكِيمٌ",
+    "english": "If you do not aid the Prophet - Allah has already aided him when those who disbelieved had driven him out [of Makkah] as one of two, when they were in the cave and he said to his companion, \"Do not grieve; indeed Allah is with us.\" And Allah sent down his tranquillity upon him and supported him with angels you did not see and made the word of those who disbelieved the lowest, while the word of Allah - that is the highest. And Allah is Exalted in Might and Wise",
+    "bangla": "যদি তোমরা তাকে (রসূলকে) সাহায্য না কর, তবে মনে রেখো, আল্লাহ তার সাহায্য করেছিলেন, যখন তাকে কাফেররা বহিষ্কার করেছিল, তিনি ছিলেন দু’জনের একজন, যখন তারা গুহার মধ্যে ছিলেন। তখন তিনি আপন সঙ্গীকে বললেন বিষন্ন হয়ো না, আল্লাহ আমাদের সাথে আছেন। অতঃপর আল্লাহ তার প্রতি স্বীয় সান্তনা নাযিল করলেন এবং তাঁর সাহায্যে এমন বাহিনী পাঠালেন, যা তোমরা দেখনি। বস্তুতঃ আল্লাহ কাফেরদের মাথা নীচু করে দিলেন আর আল্লাহর কথাই সদা সমুন্নত এবং আল্লাহ পরাক্রমশালী, প্রজ্ঞাময়।",
+    "themes": [
+      "anxiety_and_fear"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 11,
+    "ayah_no": 6,
+    "ref": "11:6",
+    "surah_name_ar": "هود",
+    "surah_name_translit": "Hud",
+    "surah_name_en": "Hud",
+    "surah_name_bn": "নবী হুদ",
+    "arabic": "۞وَمَا مِن دَآبَّةٖ فِي ٱلۡأَرۡضِ إِلَّا عَلَى ٱللَّهِ رِزۡقُهَا وَيَعۡلَمُ مُسۡتَقَرَّهَا وَمُسۡتَوۡدَعَهَاۚ كُلّٞ فِي كِتَٰبٖ مُّبِينٖ",
+    "english": "And there is no creature on earth but that upon Allah is its provision, and He knows its place of dwelling and place of storage. All is in a clear register",
+    "bangla": "আর পৃথিবীতে কোন বিচরণশীল নেই, তবে সবার জীবিকার দায়িত্ব আল্লাহ নিয়েছেন তিনি জানেন তারা কোথায় থাকে এবং কোথায় সমাপিত হয়। সবকিছুই এক সুবিন্যস্ত কিতাবে রয়েছে।",
+    "themes": [
+      "financial_hardship_and_provision"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 12,
+    "ayah_no": 87,
+    "ref": "12:87",
+    "surah_name_ar": "يوسف",
+    "surah_name_translit": "Yusuf",
+    "surah_name_en": "Joseph",
+    "surah_name_bn": "নবী ইউসুফ",
+    "arabic": "يَٰبَنِيَّ ٱذۡهَبُواْ فَتَحَسَّسُواْ مِن يُوسُفَ وَأَخِيهِ وَلَا تَاْيۡـَٔسُواْ مِن رَّوۡحِ ٱللَّهِۖ إِنَّهُۥ لَا يَاْيۡـَٔسُ مِن رَّوۡحِ ٱللَّهِ إِلَّا ٱلۡقَوۡمُ ٱلۡكَٰفِرُونَ",
+    "english": "O my sons, go and find out about Joseph and his brother and despair not of relief from Allah. Indeed, no one despairs of relief from Allah except the disbelieving people",
+    "bangla": "বৎসগণ! যাও, ইউসুফ ও তার ভাইকে তালাশ কর এবং আল্লাহর রহমত থেকে নিরাশ হয়ো না। নিশ্চয় আল্লাহর রহমত থেকে কাফের সম্প্রদায়, ব্যতীত অন্য কেউ নিরাশ হয় না।",
+    "themes": [
+      "hope_in_allahs_mercy"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 13,
+    "ayah_no": 28,
+    "ref": "13:28",
+    "surah_name_ar": "الرعد",
+    "surah_name_translit": "Ar-Ra'd",
+    "surah_name_en": "The Thunder",
+    "surah_name_bn": "বজ্রপাত",
+    "arabic": "ٱلَّذِينَ ءَامَنُواْ وَتَطۡمَئِنُّ قُلُوبُهُم بِذِكۡرِ ٱللَّهِۗ أَلَا بِذِكۡرِ ٱللَّهِ تَطۡمَئِنُّ ٱلۡقُلُوبُ",
+    "english": "Those who have believed and whose hearts are assured by the remembrance of Allah. Unquestionably, by the remembrance of Allah hearts are assured",
+    "bangla": "যারা বিশ্বাস স্থাপন করে এবং তাদের অন্তর আল্লাহর যিকির দ্বারা শান্তি লাভ করে; জেনে রাখ, আল্লাহর যিকির দ্বারাই অন্তর সমূহ শান্তি পায়।",
+    "themes": [
+      "anxiety_and_fear"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 14,
+    "ayah_no": 7,
+    "ref": "14:7",
+    "surah_name_ar": "ابراهيم",
+    "surah_name_translit": "Ibrahim",
+    "surah_name_en": "Abraham",
+    "surah_name_bn": "নবী ইবরাহীম",
+    "arabic": "وَإِذۡ تَأَذَّنَ رَبُّكُمۡ لَئِن شَكَرۡتُمۡ لَأَزِيدَنَّكُمۡۖ وَلَئِن كَفَرۡتُمۡ إِنَّ عَذَابِي لَشَدِيدٞ",
+    "english": "And [remember] when your Lord proclaimed, 'If you are grateful, I will surely increase you [in favor]; but if you deny, indeed, My punishment is severe",
+    "bangla": "যখন তোমাদের পালনকর্তা ঘোষণা করলেন যে, যদি কৃতজ্ঞতা স্বীকার কর, তবে তোমাদেরকে আরও দেব এবং যদি অকৃতজ্ঞ হও তবে নিশ্চয়ই আমার শাস্তি হবে কঠোর।",
+    "themes": [
+      "gratitude"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 15,
+    "ayah_no": 56,
+    "ref": "15:56",
+    "surah_name_ar": "الحجر",
+    "surah_name_translit": "Al-Hijr",
+    "surah_name_en": "The Rocky Tract",
+    "surah_name_bn": "পাথুরে পাহাড়",
+    "arabic": "قَالَ وَمَن يَقۡنَطُ مِن رَّحۡمَةِ رَبِّهِۦٓ إِلَّا ٱلضَّآلُّونَ",
+    "english": "He said, \"And who despairs of the mercy of his Lord except for those astray",
+    "bangla": "তিনি বললেনঃ পালনকর্তার রহমত থেকে পথভ্রষ্টরা ছাড়া কে নিরাশ হয়",
+    "themes": [
+      "hope_in_allahs_mercy"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 16,
+    "ayah_no": 18,
+    "ref": "16:18",
+    "surah_name_ar": "النحل",
+    "surah_name_translit": "An-Nahl",
+    "surah_name_en": "The Bee",
+    "surah_name_bn": "মৌমাছি",
+    "arabic": "وَإِن تَعُدُّواْ نِعۡمَةَ ٱللَّهِ لَا تُحۡصُوهَآۗ إِنَّ ٱللَّهَ لَغَفُورٞ رَّحِيمٞ",
+    "english": "And if you should count the favors of Allah, you could not enumerate them. Indeed, Allah is Forgiving and Merciful",
+    "bangla": "যদি আল্লাহর নেয়ামত গণনা কর, শেষ করতে পারবে না। নিশ্চয় আল্লাহ ক্ষমাশীল, দয়ালু।",
+    "themes": [
+      "gratitude"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 20,
+    "ayah_no": 46,
+    "ref": "20:46",
+    "surah_name_ar": "طه",
+    "surah_name_translit": "Taha",
+    "surah_name_en": "Ta-Ha",
+    "surah_name_bn": "ত়া হা",
+    "arabic": "قَالَ لَا تَخَافَآۖ إِنَّنِي مَعَكُمَآ أَسۡمَعُ وَأَرَىٰ",
+    "english": "[Allah] said, \"Fear not. Indeed, I am with you both; I hear and I see",
+    "bangla": "আল্লাহ বললেনঃ তোমরা ভয় করো না, আমি তোমাদের সাথে আছি, আমি শুনি ও দেখি।",
+    "themes": [
+      "anxiety_and_fear"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 25,
+    "ayah_no": 70,
+    "ref": "25:70",
+    "surah_name_ar": "الفرقان",
+    "surah_name_translit": "Al-Furqan",
+    "surah_name_en": "The Criterion",
+    "surah_name_bn": "মানদণ্ড",
+    "arabic": "إِلَّا مَن تَابَ وَءَامَنَ وَعَمِلَ عَمَلٗا صَٰلِحٗا فَأُوْلَـٰٓئِكَ يُبَدِّلُ ٱللَّهُ سَيِّـَٔاتِهِمۡ حَسَنَٰتٖۗ وَكَانَ ٱللَّهُ غَفُورٗا رَّحِيمٗا",
+    "english": "Except for those who repent, believe and do righteous work. For them Allah will replace their evil deeds with good. And ever is Allah Forgiving and Merciful",
+    "bangla": "কিন্তু যারা তওবা করে বিশ্বাস স্থাপন করে এবং সৎকর্ম করে, আল্লাহ তাদের গোনাহকে পুন্য দ্বারা পরিবর্তত করে এবং দেবেন। আল্লাহ ক্ষমাশীল, পরম দয়ালু।",
+    "themes": [
+      "forgiveness_and_repentance"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 26,
+    "ayah_no": 80,
+    "ref": "26:80",
+    "surah_name_ar": "الشعراء",
+    "surah_name_translit": "Ash-Shu'ara",
+    "surah_name_en": "The Poets",
+    "surah_name_bn": "কবি",
+    "arabic": "وَإِذَا مَرِضۡتُ فَهُوَ يَشۡفِينِ",
+    "english": "And when I am ill, it is He who cures me",
+    "bangla": "যখন আমি রোগাক্রান্ত হই, তখন তিনিই আরোগ্য দান করেন।",
+    "themes": [
+      "illness_and_health"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 30,
+    "ayah_no": 21,
+    "ref": "30:21",
+    "surah_name_ar": "الروم",
+    "surah_name_translit": "Ar-Rum",
+    "surah_name_en": "The Romans",
+    "surah_name_bn": "রোমান জাতি",
+    "arabic": "وَمِنۡ ءَايَٰتِهِۦٓ أَنۡ خَلَقَ لَكُم مِّنۡ أَنفُسِكُمۡ أَزۡوَٰجٗا لِّتَسۡكُنُوٓاْ إِلَيۡهَا وَجَعَلَ بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَتَفَكَّرُونَ",
+    "english": "And of His signs is that He created for you from yourselves mates that you may find tranquillity in them; and He placed between you affection and mercy. Indeed in that are signs for a people who give thought",
+    "bangla": "আর এক নিদর্শন এই যে, তিনি তোমাদের জন্যে তোমাদের মধ্য থেকে তোমাদের সংগিনীদের সৃষ্টি করেছেন, যাতে তোমরা তাদের কাছে শান্তিতে থাক এবং তিনি তোমাদের মধ্যে পারস্পরিক সম্প্রীতি ও দয়া সৃষ্টি করেছেন। নিশ্চয় এতে চিন্তাশীল লোকদের জন্যে নিদর্শনাবলী রয়েছে।",
+    "themes": [
+      "family_and_marriage_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 39,
+    "ayah_no": 10,
+    "ref": "39:10",
+    "surah_name_ar": "الزمر",
+    "surah_name_translit": "Az-Zumar",
+    "surah_name_en": "The Troops",
+    "surah_name_bn": "দলবদ্ধ জনতা",
+    "arabic": "قُلۡ يَٰعِبَادِ ٱلَّذِينَ ءَامَنُواْ ٱتَّقُواْ رَبَّكُمۡۚ لِلَّذِينَ أَحۡسَنُواْ فِي هَٰذِهِ ٱلدُّنۡيَا حَسَنَةٞۗ وَأَرۡضُ ٱللَّهِ وَٰسِعَةٌۗ إِنَّمَا يُوَفَّى ٱلصَّـٰبِرُونَ أَجۡرَهُم بِغَيۡرِ حِسَابٖ",
+    "english": "Say, \"O My servants who have believed, fear your Lord. For those who do good in this world is good, and the earth of Allah is spacious. Indeed, the patient will be given their reward without account",
+    "bangla": "বলুন, হে আমার বিশ্বাসী বান্দাগণ! তোমরা তোমাদের পালনকর্তাকে ভয় কর। যারা এ দুনিয়াতে সৎকাজ করে, তাদের জন্যে রয়েছে পুণ্য। আল্লাহর পৃথিবী প্রশস্ত। যারা সবরকারী, তারাই তাদের পুরস্কার পায় অগণিত।",
+    "themes": [
+      "patience_and_hardship"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 39,
+    "ayah_no": 53,
+    "ref": "39:53",
+    "surah_name_ar": "الزمر",
+    "surah_name_translit": "Az-Zumar",
+    "surah_name_en": "The Troops",
+    "surah_name_bn": "দলবদ্ধ জনতা",
+    "arabic": "۞قُلۡ يَٰعِبَادِيَ ٱلَّذِينَ أَسۡرَفُواْ عَلَىٰٓ أَنفُسِهِمۡ لَا تَقۡنَطُواْ مِن رَّحۡمَةِ ٱللَّهِۚ إِنَّ ٱللَّهَ يَغۡفِرُ ٱلذُّنُوبَ جَمِيعًاۚ إِنَّهُۥ هُوَ ٱلۡغَفُورُ ٱلرَّحِيمُ",
+    "english": "Say, \"O My servants who have transgressed against themselves [by sinning], do not despair of the mercy of Allah. Indeed, Allah forgives all sins. Indeed, it is He who is the Forgiving, the Merciful",
+    "bangla": "বলুন, হে আমার বান্দাগণ যারা নিজেদের উপর যুলুম করেছ তোমরা আল্লাহর রহমত থেকে নিরাশ হয়ো না। নিশ্চয় আল্লাহ সমস্ত গোনাহ মাফ করেন। তিনি ক্ষমাশীল, পরম দয়ালু।",
+    "themes": [
+      "grief_and_loss",
+      "hope_in_allahs_mercy",
+      "forgiveness_and_repentance"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 41,
+    "ayah_no": 34,
+    "ref": "41:34",
+    "surah_name_ar": "فصلت",
+    "surah_name_translit": "Fussilat",
+    "surah_name_en": "Explained in Detail",
+    "surah_name_bn": "সুস্পষ্ট বিবরণ",
+    "arabic": "وَلَا تَسۡتَوِي ٱلۡحَسَنَةُ وَلَا ٱلسَّيِّئَةُۚ ٱدۡفَعۡ بِٱلَّتِي هِيَ أَحۡسَنُ فَإِذَا ٱلَّذِي بَيۡنَكَ وَبَيۡنَهُۥ عَدَٰوَةٞ كَأَنَّهُۥ وَلِيٌّ حَمِيمٞ",
+    "english": "And not equal are the good deed and the bad. Repel [evil] by that [deed] which is better; and thereupon the one whom between you and him is enmity [will become] as though he was a devoted friend",
+    "bangla": "সমান নয় ভাল ও মন্দ। জওয়াবে তাই বলুন যা উৎকৃষ্ট। তখন দেখবেন আপনার সাথে যে ব্যক্তির শুত্রুতা রয়েছে, সে যেন অন্তরঙ্গ বন্ধু।",
+    "themes": [
+      "anger_and_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 42,
+    "ayah_no": 37,
+    "ref": "42:37",
+    "surah_name_ar": "الشورى",
+    "surah_name_translit": "Ash-Shuraa",
+    "surah_name_en": "The Consultation",
+    "surah_name_bn": "পরামর্শ",
+    "arabic": "وَٱلَّذِينَ يَجۡتَنِبُونَ كَبَـٰٓئِرَ ٱلۡإِثۡمِ وَٱلۡفَوَٰحِشَ وَإِذَا مَا غَضِبُواْ هُمۡ يَغۡفِرُونَ",
+    "english": "And those who avoid the major sins and immoralities, and when they are angry, they forgive",
+    "bangla": "যারা বড় গোনাহ ও অশ্লীল কার্য থেকে বেঁচে থাকে এবং ক্রোধাম্বিত হয়েও ক্ষমা করে",
+    "themes": [
+      "anger_and_conflict"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 50,
+    "ayah_no": 16,
+    "ref": "50:16",
+    "surah_name_ar": "ق",
+    "surah_name_translit": "Qaf",
+    "surah_name_en": "The Letter \"Qaf\"",
+    "surah_name_bn": "কাফ",
+    "arabic": "وَلَقَدۡ خَلَقۡنَا ٱلۡإِنسَٰنَ وَنَعۡلَمُ مَا تُوَسۡوِسُ بِهِۦ نَفۡسُهُۥۖ وَنَحۡنُ أَقۡرَبُ إِلَيۡهِ مِنۡ حَبۡلِ ٱلۡوَرِيدِ",
+    "english": "And We have already created man and know what his soul whispers to him, and We are closer to him than [his] jugular vein",
+    "bangla": "আমি মানুষ সৃষ্টি করেছি এবং তার মন নিভৃতে যে কুচিন্তা করে, সে সম্বন্ধেও আমি অবগত আছি। আমি তার গ্রীবাস্থিত ধমনী থেকেও অধিক নিকটবর্তী।",
+    "themes": [
+      "loneliness"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 65,
+    "ayah_no": 2,
+    "ref": "65:2",
+    "surah_name_ar": "الطلاق",
+    "surah_name_translit": "At-Talaq",
+    "surah_name_en": "The Divorce",
+    "surah_name_bn": "তালাক",
+    "arabic": "فَإِذَا بَلَغۡنَ أَجَلَهُنَّ فَأَمۡسِكُوهُنَّ بِمَعۡرُوفٍ أَوۡ فَارِقُوهُنَّ بِمَعۡرُوفٖ وَأَشۡهِدُواْ ذَوَيۡ عَدۡلٖ مِّنكُمۡ وَأَقِيمُواْ ٱلشَّهَٰدَةَ لِلَّهِۚ ذَٰلِكُمۡ يُوعَظُ بِهِۦ مَن كَانَ يُؤۡمِنُ بِٱللَّهِ وَٱلۡيَوۡمِ ٱلۡأٓخِرِۚ وَمَن يَتَّقِ ٱللَّهَ يَجۡعَل لَّهُۥ مَخۡرَجٗا",
+    "english": "And when they have [nearly] fulfilled their term, either retain them according to acceptable terms or part with them according to acceptable terms. And bring to witness two just men from among you and establish the testimony for [the acceptance of] Allah. That is instructed to whoever should believe in Allah and the Last day. And whoever fears Allah - He will make for him a way out",
+    "bangla": "অতঃপর তারা যখন তাদের ইদ্দতকালে পৌঁছে, তখন তাদেরকে যথোপযুক্ত পন্থায় রেখে দেবে অথবা যথোপযুক্ত পন্থায় ছেড়ে দেবে এবং তোমাদের মধ্য থেকে দু’জন নির্ভরযোগ্য লোককে সাক্ষী রাখবে। তোমরা আল্লাহর উদ্দেশ্যে সাক্ষ্য দিবে। এতদ্দ্বারা যে ব্যক্তি আল্লাহ ও পরকালে বিশ্বাস করে, তাকে উপদেশ দেয়া হচ্ছে। আর যে আল্লাহকে ভয় করে, আল্লাহ তার জন্যে নিস্কৃতির পথ করে দেবেন।",
+    "themes": [
+      "financial_hardship_and_provision",
+      "guidance_and_decision_making"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 65,
+    "ayah_no": 3,
+    "ref": "65:3",
+    "surah_name_ar": "الطلاق",
+    "surah_name_translit": "At-Talaq",
+    "surah_name_en": "The Divorce",
+    "surah_name_bn": "তালাক",
+    "arabic": "وَيَرۡزُقۡهُ مِنۡ حَيۡثُ لَا يَحۡتَسِبُۚ وَمَن يَتَوَكَّلۡ عَلَى ٱللَّهِ فَهُوَ حَسۡبُهُۥٓۚ إِنَّ ٱللَّهَ بَٰلِغُ أَمۡرِهِۦۚ قَدۡ جَعَلَ ٱللَّهُ لِكُلِّ شَيۡءٖ قَدۡرٗا",
+    "english": "And will provide for him from where he does not expect. And whoever relies upon Allah - then He is sufficient for him. Indeed, Allah will accomplish His purpose. Allah has already set for everything a [decreed] extent",
+    "bangla": "এবং তাকে তার ধারণাতীত জায়গা থেকে রিযিক দেবেন। যে ব্যক্তি আল্লাহর উপর ভরসা করে তার জন্যে তিনিই যথেষ্ট। আল্লাহ তার কাজ পূর্ণ করবেন। আল্লাহ সবকিছুর জন্যে একটি পরিমাণ স্থির করে রেখেছেন।",
+    "themes": [
+      "anxiety_and_fear",
+      "trust_in_allah_tawakkul",
+      "financial_hardship_and_provision"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 66,
+    "ayah_no": 8,
+    "ref": "66:8",
+    "surah_name_ar": "التحريم",
+    "surah_name_translit": "At-Tahrim",
+    "surah_name_en": "The Prohibition",
+    "surah_name_bn": "নিষিদ্ধকরণ",
+    "arabic": "يَـٰٓأَيُّهَا ٱلَّذِينَ ءَامَنُواْ تُوبُوٓاْ إِلَى ٱللَّهِ تَوۡبَةٗ نَّصُوحًا عَسَىٰ رَبُّكُمۡ أَن يُكَفِّرَ عَنكُمۡ سَيِّـَٔاتِكُمۡ وَيُدۡخِلَكُمۡ جَنَّـٰتٖ تَجۡرِي مِن تَحۡتِهَا ٱلۡأَنۡهَٰرُ يَوۡمَ لَا يُخۡزِي ٱللَّهُ ٱلنَّبِيَّ وَٱلَّذِينَ ءَامَنُواْ مَعَهُۥۖ نُورُهُمۡ يَسۡعَىٰ بَيۡنَ أَيۡدِيهِمۡ وَبِأَيۡمَٰنِهِمۡ يَقُولُونَ رَبَّنَآ أَتۡمِمۡ لَنَا نُورَنَا وَٱغۡفِرۡ لَنَآۖ إِنَّكَ عَلَىٰ كُلِّ شَيۡءٖ قَدِيرٞ",
+    "english": "O you who have believed, repent to Allah with sincere repentance. Perhaps your Lord will remove from you your misdeeds and admit you into gardens beneath which rivers flow [on] the Day when Allah will not disgrace the Prophet and those who believed with him. Their light will proceed before them and on their right; they will say, \"Our Lord, perfect for us our light and forgive us. Indeed, You are over all things competent",
+    "bangla": "মুমিনগণ! তোমরা আল্লাহ তা’আলার কাছে তওবা কর-আন্তরিক তওবা। আশা করা যায়, তোমাদের পালনকর্তা তোমাদের মন্দ কর্মসমূহ মোচন করে দেবেন এবং তোমাদেরকে দাখিল করবেন জান্নাতে, যার তলদেশে নদী প্রবাহিত। সেদিন আল্লাহ নবী এবং তাঁর বিশ্বাসী সহচরদেরকে অপদস্থ করবেন না। তাদের নূর তাদের সামনে ও ডানদিকে ছুটোছুটি করবে। তারা বলবেঃ হে আমাদের পালনকর্তা, আমাদের নূরকে পূর্ণ করে দিন এবং আমাদেরকে ক্ষমা করুন। নিশ্চয় আপনি সবকিছুর উপর সর্ব শক্তিমান।",
+    "themes": [
+      "forgiveness_and_repentance"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 94,
+    "ayah_no": 5,
+    "ref": "94:5",
+    "surah_name_ar": "الشرح",
+    "surah_name_translit": "Ash-Sharh",
+    "surah_name_en": "The Relief",
+    "surah_name_bn": "বক্ষ প্রশস্তকরণ",
+    "arabic": "فَإِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرًا",
+    "english": "For indeed, with hardship [will be] ease",
+    "bangla": "নিশ্চয় কষ্টের সাথে স্বস্তি রয়েছে।",
+    "themes": [
+      "grief_and_loss",
+      "patience_and_hardship",
+      "hope_in_allahs_mercy",
+      "financial_hardship_and_provision"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  },
+  {
+    "surah_no": 94,
+    "ayah_no": 6,
+    "ref": "94:6",
+    "surah_name_ar": "الشرح",
+    "surah_name_translit": "Ash-Sharh",
+    "surah_name_en": "The Relief",
+    "surah_name_bn": "বক্ষ প্রশস্তকরণ",
+    "arabic": "إِنَّ مَعَ ٱلۡعُسۡرِ يُسۡرٗا",
+    "english": "Indeed, with hardship [will be] ease",
+    "bangla": "নিশ্চয় কষ্টের সাথে স্বস্তি রয়েছে।",
+    "themes": [
+      "grief_and_loss",
+      "patience_and_hardship",
+      "hope_in_allahs_mercy",
+      "financial_hardship_and_provision",
+      "guidance_and_decision_making"
+    ],
+    "tafsir_en": null,
+    "tafsir_bn": null
+  }
+]
