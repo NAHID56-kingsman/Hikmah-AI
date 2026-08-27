@@ -1,0 +1,15 @@
+{
+  "financial_hardship_and_provision": ["job", "unemployed", "money", "broke", "income", "debt", "poverty", "afford", "bills", "salary"],
+  "anxiety_and_fear": ["scared", "worried", "nervous", "panic", "stress", "afraid", "overwhelmed"],
+  "grief_and_loss": ["died", "death", "lost someone", "passed away", "funeral", "mourning"],
+  "patience_and_hardship": ["difficult", "struggling", "hard time", "suffering", "tough"],
+  "hope_in_allahs_mercy": ["guilty", "sinned", "ashamed", "regret"],
+  "forgiveness_and_repentance": ["guilty", "sinned", "ashamed", "regret", "mistake"],
+  "gratitude": ["thankful", "blessed", "grateful"],
+  "trust_in_allah_tawakkul": ["uncertain", "future", "decision", "unsure"],
+  "family_and_marriage_conflict": ["divorce", "spouse", "husband", "wife", "argument", "marriage problems"],
+  "loneliness": ["alone", "lonely", "isolated", "no friends"],
+  "anger_and_conflict": ["angry", "furious", "conflict", "fight"],
+  "illness_and_health": ["sick", "illness", "disease", "hospital", "pain"],
+  "guidance_and_decision_making": ["confused", "don't know what to do", "choice", "crossroads"]
+}
