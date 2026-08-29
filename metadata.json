@@ -1,0 +1,8 @@
+{
+  "name": "Hikmah AI",
+  "description": "Quranic reflection companion with crisis safety detection, thematic verse retrieval in Arabic, English, and Bangla, and compassionate reflections.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

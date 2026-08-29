@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-arabic {
+  font-family: 'Amiri', serif;
+  direction: rtl;
+}
+
+.font-bangla {
+  font-family: 'Hind Siliguri', 'Plus Jakarta Sans', sans-serif;
+}
+
+.font-serif-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Markdown styling within reflection body */
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  color: #1c1917;
+  font-weight: 700;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.markdown-body h2 {
+  font-size: 1.15rem;
+}
+
+.markdown-body h3 {
+  font-size: 1.05rem;
+  color: #065f46; /* emerald-800 */
+}
+
+.markdown-body p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.markdown-body ul {
+  list-style-type: disc;
+  padding-left: 1.4rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  space-y: 0.35rem;
+}
+
+.markdown-body ol {
+  list-style-type: decimal;
+  padding-left: 1.4rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+.markdown-body blockquote {
+  border-left: 3px solid #059669;
+  background-color: #f0fdf4;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  color: #064e3b;
+  margin: 0.85rem 0;
+  font-style: italic;
+}
+
+.markdown-body strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
