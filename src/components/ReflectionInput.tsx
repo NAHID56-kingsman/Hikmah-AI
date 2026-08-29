@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Send, Sparkles, HelpCircle, Compass, RefreshCw } from 'lucide-react';
-import { formatThemeName, getThemeBanglaName } from '../utils';
+import { Send, Sparkles, RefreshCw } from 'lucide-react';
 
 interface ReflectionInputProps {
   currentLang: 'en' | 'bn';
   isLoading: boolean;
   onSubmit: (message: string, selectedThemes: string[], responseLang: 'auto' | 'en' | 'bn') => void;
-  availableThemes: { key: string; name: string }[];
+  availableThemes?: { key: string; name: string }[];
   initialText?: string;
 }
 
@@ -32,11 +31,9 @@ export const ReflectionInput: React.FC<ReflectionInputProps> = ({
   currentLang,
   isLoading,
   onSubmit,
-  availableThemes,
   initialText = '',
 }) => {
   const [text, setText] = useState(initialText);
-  const [selectedThemes, setSelectedThemes] = useState<string[]>([]);
   const [responseLang, setResponseLang] = useState<'auto' | 'en' | 'bn'>(currentLang);
 
   // Sync initialText if updated
@@ -56,33 +53,27 @@ export const ReflectionInput: React.FC<ReflectionInputProps> = ({
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     if (!text.trim() || isLoading) return;
-    onSubmit(text.trim(), selectedThemes, responseLang);
-  };
-
-  const toggleTheme = (key: string) => {
-    setSelectedThemes((prev) =>
-      prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
-    );
+    onSubmit(text.trim(), [], responseLang);
   };
 
   return (
     <div className="bg-white rounded-3xl border border-stone-200/90 p-6 sm:p-7 shadow-xs mb-8">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mb-1.5">
             <label
               htmlFor="reflection-textarea"
-              className="text-sm font-semibold text-stone-900 flex items-center gap-1.5"
+              className="text-base font-semibold text-stone-900 flex items-center gap-1.5"
             >
               <Sparkles className="w-4 h-4 text-emerald-600" />
               <span>
                 {currentLang === 'bn'
-                  ? 'আপনার মনের অনুভূতি বা পরিস্থিতি শেয়ার করুন'
+                  ? 'আজ আপনার মনের অনুভূতি বা হৃদয়ের কথা কি?'
                   : 'What is on your heart or mind today?'}
               </span>
             </label>
-            <span className="text-xs text-stone-600">
-              {currentLang === 'bn' ? 'বাংলা বা ইংরেজিতে লিখুন' : 'English or Bangla supported'}
+            <span className="text-xs text-stone-500 font-medium">
+              {currentLang === 'bn' ? 'বাংলা বা ইংরেজিতে লিখুন' : 'English or Bangla'}
             </span>
           </div>
 
@@ -99,42 +90,11 @@ export const ReflectionInput: React.FC<ReflectionInputProps> = ({
               rows={4}
               placeholder={
                 currentLang === 'bn'
-                  ? 'যেমন: "আমি চাকরি হারিয়েছি এবং পরিবারের খরচ নিয়ে খুব চিন্তিত..." অথবা "আমার অন্তরে শান্তি পাচ্ছি না..."'
-                  : 'e.g., "I just lost my job and I am anxious about how to support my family..." or "I feel lonely and need strength..."'
+                  ? 'একটি শান্ত শ্বাস নিন এবং নিজের কথা লিখুন... যেমন: "আমি ভবিষ্যৎ নিয়ে একটু চিন্তিত, মনের শান্তি ও অবিচলতা খুঁজছি..." অথবা "আজ আল্লাহর রহমতের জন্য অন্তরে শোকর অনুভব করছি..."'
+                  : 'Take a gentle breath and share whatever is on your heart... e.g., "I\'ve been feeling exhausted with work and seeking peace of mind," or "I want to renew my trust in Allah\'s wisdom during this life transition."'
               }
-              className="w-full p-4 rounded-2xl border border-stone-300 bg-stone-50/50 text-stone-900 placeholder:text-stone-600 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all outline-none resize-y text-base"
+              className="w-full p-4 rounded-2xl border border-stone-300 bg-stone-50/50 text-stone-900 placeholder:text-stone-500 focus:bg-white focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/20 transition-all outline-none resize-y text-base"
             />
-          </div>
-        </div>
-
-        {/* Thematic filters (optional tags) */}
-        <div>
-          <div className="text-xs font-medium text-stone-600 mb-2 flex items-center gap-1">
-            <Compass className="w-3.5 h-3.5 text-stone-400" />
-            <span>
-              {currentLang === 'bn'
-                ? 'প্রাসঙ্গিক বিষয় নির্বাচন করুন (ঐচ্ছিক):'
-                : 'Optional theme focus:'}
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-1.5 max-h-24 overflow-y-auto pr-1 pb-1">
-            {availableThemes.map((t) => {
-              const isSelected = selectedThemes.includes(t.key);
-              return (
-                <button
-                  type="button"
-                  key={t.key}
-                  onClick={() => toggleTheme(t.key)}
-                  className={`text-xs px-2.5 py-1 rounded-full border transition-all ${
-                    isSelected
-                      ? 'bg-emerald-700 border-emerald-700 text-white shadow-2xs'
-                      : 'bg-stone-50 border-stone-200 text-stone-700 hover:bg-stone-100 hover:border-stone-300'
-                  }`}
-                >
-                  {currentLang === 'bn' ? getThemeBanglaName(t.key) : t.name}
-                </button>
-              );
-            })}
           </div>
         </div>
 
