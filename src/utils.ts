@@ -48,7 +48,7 @@ export function getThemeBanglaName(themeKey: string): string {
     striving_effort_and_hard_work: 'পরিশ্রম, সাধনা ও সৎ চেষ্টা',
     brotherhood_and_community: 'ঐক্য, ভ্রাতৃত্ব ও সামাজিক সম্প্রীতি',
     paradise_and_hereafter: 'জান্নাত, আখেরাত ও পরম সুখ',
-    hellfire_and_divine_warning: 'জাহান্নাম ও ঐশী সতর্কবাণী',
+    hellfire_and_divine_warning: 'জাহান্নাম  সতর্কবাণী',
     knowledge_and_wisdom: 'জ্ঞান, প্রজ্ঞা ও নিদর্শন',
     tests_of_faith_and_steadfastness: 'ঈমানের পরীক্ষা ও অবিচলতা',
     honesty_in_trade_and_contracts: 'সততা, ব্যবসা-বাণিজ্য ও আমানত',
