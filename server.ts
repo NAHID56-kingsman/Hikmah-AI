@@ -3,6 +3,7 @@ import cors from 'cors';
 import path from 'path';
 import fs from 'fs';
 import { GoogleGenAI } from '@google/genai';
+import { Groq } from 'groq-sdk';
 import { createServer as createViteServer } from 'vite';
 
 const app = express();
@@ -540,8 +541,196 @@ const THEME_NAMES_MAP: Record<string, { name: string; nameBn: string }> = {
   protection_of_life_and_peace: { name: 'Sanctity of Life & Peace', nameBn: 'জীবনের নিরাপত্তা ও শান্তি প্রতিষ্ঠা' },
 };
 
+// Helper to convert arbitrary contents & systemInstruction into Groq / OpenAI messages format
+function convertToGroqMessages(
+  contents: any,
+  systemInstruction?: string
+): Array<{ role: 'system' | 'user' | 'assistant'; content: string }> {
+  const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
+
+  if (systemInstruction && systemInstruction.trim()) {
+    messages.push({
+      role: 'system',
+      content: systemInstruction.trim(),
+    });
+  }
+
+  if (typeof contents === 'string') {
+    messages.push({
+      role: 'user',
+      content: contents,
+    });
+  } else if (Array.isArray(contents)) {
+    for (const item of contents) {
+      if (typeof item === 'string') {
+        messages.push({ role: 'user', content: item });
+      } else if (item && typeof item === 'object') {
+        const role = item.role === 'model' || item.role === 'assistant' ? 'assistant' : 'user';
+        let textContent = '';
+        if (typeof item.text === 'string') {
+          textContent = item.text;
+        } else if (Array.isArray(item.parts)) {
+          textContent = item.parts.map((p: any) => p?.text || '').filter(Boolean).join('\n');
+        } else if (typeof item.content === 'string') {
+          textContent = item.content;
+        }
+        if (textContent.trim()) {
+          messages.push({ role, content: textContent });
+        }
+      }
+    }
+  }
+
+  if (messages.length === 0 || (messages.length === 1 && messages[0].role === 'system')) {
+    messages.push({ role: 'user', content: 'Salam' });
+  }
+
+  return messages;
+}
+
+// Groq client lazy initialization
+let groqClient: Groq | null = null;
+function getGroqClient(): Groq | null {
+  const groqApiKey = process.env.GROQ_API_KEY;
+  if (!groqApiKey) return null;
+  if (!groqClient) {
+    groqClient = new Groq({ apiKey: groqApiKey });
+  }
+  return groqClient;
+}
+
+// Robust Gemini execution helper with automatic model fallback for 503 / high demand spikes
+async function executeGeminiWithModelFallback(
+  ai: GoogleGenAI,
+  params: {
+    contents: any;
+    systemInstruction?: string;
+    maxOutputTokens?: number;
+    temperature?: number;
+  }
+): Promise<string | null> {
+  const modelsToTry = [
+    'gemini-2.5-flash',
+    'gemini-3.1-flash-lite',
+    'gemini-flash-latest',
+    'gemini-3.7-flash',
+  ];
+
+  for (const modelName of modelsToTry) {
+    try {
+      const config: any = {};
+      if (params.systemInstruction) config.systemInstruction = params.systemInstruction;
+      if (params.maxOutputTokens) config.maxOutputTokens = params.maxOutputTokens;
+      if (params.temperature !== undefined) config.temperature = params.temperature;
+
+      const response = await ai.models.generateContent({
+        model: modelName,
+        contents: params.contents,
+        config,
+      });
+
+      if (response && response.text && response.text.trim().length > 0) {
+        console.log(`[Hikmah AI] ✅ Response generated via Primary Provider: Gemini Flash (${modelName})`);
+        return response.text.trim();
+      }
+    } catch (err: any) {
+      console.warn(`[Hikmah AI] ⚠️ Gemini model (${modelName}) failed or rate-limited: ${err?.message || err}`);
+    }
+  }
+
+  return null;
+}
+
+// Fallback Groq execution using high-performance Llama models (e.g., Llama 3.3 70B & Llama 3.1 8B)
+async function executeGroqWithFallback(params: {
+  contents: any;
+  systemInstruction?: string;
+  maxOutputTokens?: number;
+  temperature?: number;
+}): Promise<string | null> {
+  const groq = getGroqClient();
+  if (!groq) {
+    console.warn('[Hikmah AI] ⚠️ GROQ_API_KEY is not configured in environment.');
+    return null;
+  }
+
+  // Supported Llama models on Groq
+  const groqModels = [
+    'llama-3.3-70b-versatile',
+    'llama-3.1-8b-instant',
+  ];
+
+  const messages = convertToGroqMessages(params.contents, params.systemInstruction);
+
+  for (const model of groqModels) {
+    try {
+      console.log(`[Hikmah AI] 🔄 Attempting fallback inference via Groq (${model})...`);
+      const completion = await groq.chat.completions.create({
+        model,
+        messages,
+        max_tokens: params.maxOutputTokens || 2000,
+        temperature: params.temperature ?? 0.6,
+      });
+
+      const text = completion.choices?.[0]?.message?.content;
+      if (text && text.trim().length > 0) {
+        console.log(`[Hikmah AI] ✅ Successfully generated response using Fallback Provider: Groq + Llama (${model})`);
+        return text.trim();
+      }
+    } catch (err: any) {
+      console.warn(`[Hikmah AI] ⚠️ Groq model (${model}) error:`, err?.message || err);
+    }
+  }
+
+  return null;
+}
+
+// Master LLM Router: Tries Gemini Flash first (Primary); switches to Groq + Llama on failure / quota limits
+async function executeLLMWithFallback(params: {
+  contents: any;
+  systemInstruction?: string;
+  maxOutputTokens?: number;
+  temperature?: number;
+}): Promise<{ text: string | null; provider: 'gemini' | 'groq' | 'local_fallback' }> {
+  const geminiApiKey = process.env.GEMINI_API_KEY;
+
+  // 1. Primary Provider: Google Gemini Flash
+  if (geminiApiKey) {
+    try {
+      const ai = new GoogleGenAI({
+        apiKey: geminiApiKey,
+        httpOptions: {
+          headers: {
+            'User-Agent': 'aistudio-build',
+          },
+        },
+      });
+
+      const geminiResult = await executeGeminiWithModelFallback(ai, params);
+      if (geminiResult && geminiResult.trim().length > 0) {
+        return { text: geminiResult.trim(), provider: 'gemini' };
+      }
+      console.warn('[Hikmah AI] ⚠️ All Gemini models failed / exhausted. Automatically switching to Groq + Llama...');
+    } catch (err: any) {
+      console.warn(`[Hikmah AI] ⚠️ Gemini Primary Provider failed (${err?.message || err}). Triggering automatic fallback to Groq + Llama...`);
+    }
+  } else {
+    console.warn('[Hikmah AI] ℹ️ GEMINI_API_KEY not configured. Directly using Fallback Provider: Groq + Llama...');
+  }
+
+  // 2. Fallback Provider: Groq + Llama
+  const groqResult = await executeGroqWithFallback(params);
+  if (groqResult && groqResult.trim().length > 0) {
+    return { text: groqResult.trim(), provider: 'groq' };
+  }
+
+  // 3. Fallback: Local curated Islamic reflection templates
+  console.warn('[Hikmah AI] ℹ️ Neither Gemini nor Groq available. Serving local curated Islamic reflection.');
+  return { text: null, provider: 'local_fallback' };
+}
+
 // AI-assisted Quranic Verse Locator across all 114 Surahs (6,236 verses)
-async function findQuranicReferencesWithAI(query: string, ai: GoogleGenAI): Promise<string[]> {
+async function findQuranicReferencesWithAI(query: string): Promise<string[]> {
   try {
     const prompt = `You are a certified Islamic scholar and Hafiz of the Holy Quran with complete knowledge of all 114 Surahs (6,236 verses).
 Given the following real-life topic, situation, emotion, question, or dilemma:
@@ -551,14 +740,14 @@ Identify 4 to 8 of the MOST ACCURATE, DIRECTLY RELATABLE, and COMFORTING Quranic
 Return ONLY a comma-separated list of Surah:Ayah numbers (for example: "2:153, 94:5, 3:139, 65:3, 13:28, 20:46, 21:87, 39:53, 2:286, 17:23, 30:21").
 Do not write any other explanation or text, only the list of references.`;
 
-    const result = await executeGeminiWithModelFallback(ai, {
+    const result = await executeLLMWithFallback({
       contents: prompt,
       maxOutputTokens: 120,
       temperature: 0.1,
     });
 
-    if (result) {
-      const matches = result.match(/\b\d+:\d+\b/g);
+    if (result.text) {
+      const matches = result.text.match(/\b\d+:\d+\b/g);
       if (matches && matches.length > 0) {
         return Array.from(new Set(matches));
       }
@@ -568,6 +757,7 @@ Do not write any other explanation or text, only the list of references.`;
   }
   return [];
 }
+
 
 // Minimum relevance threshold to guarantee only genuinely relatable verses are shown
 const MIN_RELATABLE_SCORE = 1.8;
@@ -919,48 +1109,6 @@ What you are currently carrying and experiencing in your heart matters deeply. W
   }
 }
 
-// Robust Gemini execution helper with automatic model fallback for 503 / high demand spikes
-async function executeGeminiWithModelFallback(
-  ai: GoogleGenAI,
-  params: {
-    contents: any;
-    systemInstruction?: string;
-    maxOutputTokens?: number;
-    temperature?: number;
-  }
-): Promise<string | null> {
-  // Reliable list of fast and responsive flash models
-  const modelsToTry = [
-    'gemini-2.5-flash',
-    'gemini-3.1-flash-lite',
-    'gemini-flash-latest',
-    'gemini-3.7-flash',
-  ];
-
-  for (const modelName of modelsToTry) {
-    try {
-      const config: any = {};
-      if (params.systemInstruction) config.systemInstruction = params.systemInstruction;
-      if (params.maxOutputTokens) config.maxOutputTokens = params.maxOutputTokens;
-      if (params.temperature !== undefined) config.temperature = params.temperature;
-
-      const response = await ai.models.generateContent({
-        model: modelName,
-        contents: params.contents,
-        config,
-      });
-
-      if (response && response.text && response.text.trim().length > 0) {
-        return response.text;
-      }
-    } catch {
-      // Seamlessly proceed to next model in case of 503 spikes or quota limits
-    }
-  }
-
-  return null;
-}
-
 // API Routes
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({
@@ -968,6 +1116,9 @@ app.get('/api/health', (req: Request, res: Response) => {
     versesCount: activeCorpus.length,
     themesCount: Object.keys(themesData).length,
     hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
+    hasGroqKey: Boolean(process.env.GROQ_API_KEY),
+    primaryProvider: 'Google Gemini Flash',
+    fallbackProvider: 'Groq (Llama 3.3 70B & 3.1 8B)',
   });
 });
 
@@ -1060,27 +1211,16 @@ app.post('/api/translate-reflection', async (req: Request, res: Response) => {
     return res.status(400).json({ error: 'Text is required' });
   }
 
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (apiKey) {
-    try {
-      const ai = new GoogleGenAI({
-        apiKey,
-        httpOptions: {
-          headers: {
-            'User-Agent': 'aistudio-build',
-          },
-        },
-      });
-      
-      let prompt = '';
-      if (targetLang === 'bn') {
-        const verseCitation = (verses && Array.isArray(verses) && verses.length > 0)
-          ? verses.map((v: any) =>
-              `> "${v.bangla || v.english}"\n> — **সূরা ${v.surah_name_translit || ''} (${v.surah_name_bn || v.surah_name_en || ''}) [${v.ref}]**`
-            ).join('\n\n')
-          : '';
+  try {
+    let prompt = '';
+    if (targetLang === 'bn') {
+      const verseCitation = (verses && Array.isArray(verses) && verses.length > 0)
+        ? verses.map((v: any) =>
+            `> "${v.bangla || v.english}"\n> — **সূরা ${v.surah_name_translit || ''} (${v.surah_name_bn || v.surah_name_en || ''}) [${v.ref}]**`
+          ).join('\n\n')
+        : '';
 
-        prompt = `You are an expert Islamic AI companion and scholar mentor.
+      prompt = `You are an expert Islamic AI companion and scholar mentor.
 Translate and adapt the following Islamic Tafakkur (Quranic reflection) into warm, eloquent, deeply moving, respectful Bengali (বাংলায়).
 
 AUTHENTIC BANGLA VERSE CITATIONS TO USE:
@@ -1098,14 +1238,14 @@ INSTRUCTIONS:
 2. Use the provided authentic Bengali verse translations verbatim in section 1.
 3. Translate the commentary into rich, empathetic, standard Bengali.
 4. Maintain clean markdown with blockquotes and bullet points.`;
-      } else {
-        const verseCitation = (verses && Array.isArray(verses) && verses.length > 0)
-          ? verses.map((v: any) =>
-              `> "${v.english}"\n> — **Surah ${v.surah_name_translit || v.surah_name_en || ''} (${v.ref})**`
-            ).join('\n\n')
-          : '';
+    } else {
+      const verseCitation = (verses && Array.isArray(verses) && verses.length > 0)
+        ? verses.map((v: any) =>
+            `> "${v.english}"\n> — **Surah ${v.surah_name_translit || v.surah_name_en || ''} (${v.ref})**`
+          ).join('\n\n')
+        : '';
 
-        prompt = `You are an expert Islamic AI companion.
+      prompt = `You are an expert Islamic AI companion.
 Translate the following Bengali Islamic Tafakkur reflection into clear, gentle, comforting, and eloquent English.
 
 AUTHENTIC ENGLISH VERSE CITATIONS TO USE:
@@ -1123,24 +1263,23 @@ INSTRUCTIONS:
 2. Use the provided authentic English verse citations in section 1.
 3. Keep the tone compassionate, humble, and spiritually grounding.
 4. Maintain clean markdown formatting.`;
-      }
-
-      const translatedText = await executeGeminiWithModelFallback(ai, {
-        contents: prompt,
-        maxOutputTokens: 1800,
-      });
-
-      if (translatedText) {
-        return res.json({ translated: translatedText });
-      }
-    } catch {
-      // Fallback below
     }
+
+    const result = await executeLLMWithFallback({
+      contents: prompt,
+      maxOutputTokens: 1800,
+    });
+
+    if (result.text) {
+      return res.json({ translated: result.text, provider: result.provider });
+    }
+  } catch {
+    // Fallback below
   }
 
   // Graceful fallback translation generator
   const fallbackText = generateIslamicReflectionFallback('', verses || [], targetLang === 'bn' ? 'bn' : 'en');
-  return res.json({ translated: fallbackText });
+  return res.json({ translated: fallbackText, provider: 'local_fallback' });
 });
 
 app.post('/api/reflect', async (req: Request, res: Response) => {
@@ -1181,39 +1320,25 @@ app.post('/api/reflect', async (req: Request, res: Response) => {
       });
     }
 
-    // Check if Gemini AI key is available for AI Quranic search and deep reflection
-    const apiKey = process.env.GEMINI_API_KEY;
-    let aiClient: GoogleGenAI | null = null;
+    // Step 1: AI Quranic reference discovery (Primary: Gemini Flash -> Fallback: Groq + Llama)
     let aiLocatedRefs: string[] = [];
-
-    if (apiKey) {
-      aiClient = new GoogleGenAI({
-        apiKey,
-        httpOptions: {
-          headers: {
-            'User-Agent': 'aistudio-build',
-          },
-        },
-      });
-
-      // Query AI to locate the most relevant Surah:Ayah references from the whole 114 Surahs
-      try {
-        aiLocatedRefs = await findQuranicReferencesWithAI(trimmedMessage, aiClient);
-      } catch {
-        aiLocatedRefs = [];
-      }
+    try {
+      aiLocatedRefs = await findQuranicReferencesWithAI(trimmedMessage);
+    } catch {
+      aiLocatedRefs = [];
     }
 
-    // Retrieve relevant verses across the whole 6,236 verses of the Quran
+    // Step 2: Retrieve relevant verses across the whole 6,236 verses of the Quran
     const retrievalResult = retrieveVerses(trimmedMessage, selectedThemes || [], 3, 100, aiLocatedRefs);
     const retrievedVerses = retrievalResult.primary;
     const allRelatableVerses = retrievalResult.allRelatable;
     const totalRelatableCount = retrievalResult.totalCount;
 
-    // Call Gemini for reflection if AI client is present
+    // Step 3: Generate deep Tafakkur reflection (Primary: Gemini Flash -> Fallback: Groq + Llama)
     let reflectionText = '';
+    let usedProvider: 'gemini' | 'groq' | 'local_fallback' = 'local_fallback';
 
-    if (aiClient && retrievedVerses.length > 0) {
+    if (retrievedVerses.length > 0) {
       try {
         const versesBlock = retrievedVerses
           .map(
@@ -1239,24 +1364,26 @@ app.post('/api/reflect', async (req: Request, res: Response) => {
             ? `User-er kotha o poristhiti:\n"${trimmedMessage}"\n\nQuran theke relevant Ayat:\n${versesBlock}\n\nApnar responsibility:\nHikmah AI hishebe ei Ayat gulo analyze kore user er situation er sathe deeply relatable o useful shomadhan din. Natural o fluent Banglish (English letters) e 4-ti section e reply din (1. 📖 Quranic Foundation o Ayat-er Shikha, 2. 🌿 Apnar Poristhitir sathe Tafakkur o Shomadhan, 3. 🤲 Moner Shanti o Actionable Sunnah Amol, 4. 📜 Binomro Nibedon).`
             : `User's real-life situation and heart's state:\n"${trimmedMessage}"\n\nRetrieved Quranic verse(s):\n${versesBlock}\n\nYour task:\nAs a compassionate Islamic spiritual mentor and companion (Hikmah AI), provide a deeply relatable, comforting, and practically useful Quranic Tadabbur & Tafakkur commentary explaining their specific situation through the exact divine words and promises of these retrieved Ayat. Structure into the 4 defined sections (1. 📖 Sacred Quranic Foundation & Living Wisdom, 2. 🌿 Relatable Life Reflection & Quranic Mindset Shift, 3. 🤲 Practical Sunnah Toolkit & Heart's Remedy, 4. 📜 Note of Reflection).`;
 
-        const generated = await executeGeminiWithModelFallback(aiClient, {
+        const result = await executeLLMWithFallback({
           contents: userPrompt,
           systemInstruction: systemPrompt,
           maxOutputTokens: 2000,
         });
 
-        if (generated) {
-          reflectionText = generated;
+        if (result.text) {
+          reflectionText = result.text;
+          usedProvider = result.provider;
         }
       } catch {
         reflectionText = '';
       }
     }
 
-    // If Gemini key is missing or failed, provide structured template reflection
+    // Step 4: If LLMs are unavailable, fallback to structured curated Islamic reflection
     if (!reflectionText) {
       reflectionText = generateIslamicReflectionFallback(trimmedMessage, retrievedVerses, lang);
     }
+
 
     return res.json({
       user_message: trimmedMessage,
@@ -1427,71 +1554,59 @@ ${versesContextStr || 'General Quranic knowledge'}
    - Use clean markdown (bold headings, blockquotes for verses/duas).
    - End with encouragement and an authentic Prophetic Dua for their ease.`;
 
-    const apiKey = process.env.GEMINI_API_KEY;
     let aiResponseText = '';
 
-    if (apiKey) {
-      try {
-        const ai = new GoogleGenAI({
-          apiKey,
-          httpOptions: {
-            headers: {
-              'User-Agent': 'aistudio-build',
-            },
-          },
-        });
+    try {
+      // Build conversation history ensuring first message has role 'user'
+      const recentMessages = messages.slice(-10);
+      // Find index of first user message
+      const firstUserIdx = recentMessages.findIndex((m: any) => m.role === 'user');
+      const validMessages = firstUserIdx >= 0 ? recentMessages.slice(firstUserIdx) : recentMessages;
 
-        // Build conversation history for Gemini ensuring first message has role 'user'
-        const recentMessages = messages.slice(-10);
-        // Find index of first user message
-        const firstUserIdx = recentMessages.findIndex((m) => m.role === 'user');
-        const validMessages = firstUserIdx >= 0 ? recentMessages.slice(firstUserIdx) : recentMessages;
-
-        const contentsPayload: any[] = [];
-        for (const msg of validMessages) {
-          const role = msg.role === 'assistant' ? 'model' : 'user';
-          // Merge consecutive identical roles if any
-          if (contentsPayload.length > 0 && contentsPayload[contentsPayload.length - 1].role === role) {
-            contentsPayload[contentsPayload.length - 1].parts[0].text += `\n\n${msg.content}`;
-          } else {
-            contentsPayload.push({
-              role: role,
-              parts: [{ text: msg.content }],
-            });
-          }
-        }
-
-        // If no user message was found in payload, add the latest message
-        if (contentsPayload.length === 0) {
+      const contentsPayload: any[] = [];
+      for (const msg of validMessages) {
+        const role = msg.role === 'assistant' ? 'model' : 'user';
+        // Merge consecutive identical roles if any
+        if (contentsPayload.length > 0 && contentsPayload[contentsPayload.length - 1].role === role) {
+          contentsPayload[contentsPayload.length - 1].parts[0].text += `\n\n${msg.content}`;
+        } else {
           contentsPayload.push({
-            role: 'user',
-            parts: [{ text: lastMessage }],
+            role: role,
+            parts: [{ text: msg.content }],
           });
         }
-
-        const systemInstruction =
-          lang === 'bn'
-            ? CHAT_SYSTEM_PROMPT_BN
-            : lang === 'banglish'
-            ? CHAT_SYSTEM_PROMPT_BANGLISH
-            : CHAT_SYSTEM_PROMPT_EN;
-
-        const generated = await executeGeminiWithModelFallback(ai, {
-          contents: contentsPayload,
-          systemInstruction,
-          maxOutputTokens: 1500,
-          temperature: 0.7,
-        });
-
-        if (generated) {
-          aiResponseText = generated;
-        }
-      } catch {
-        // Fallback below
       }
+
+      // If no user message was found in payload, add the latest message
+      if (contentsPayload.length === 0) {
+        contentsPayload.push({
+          role: 'user',
+          parts: [{ text: lastMessage }],
+        });
+      }
+
+      const systemInstruction =
+        lang === 'bn'
+          ? CHAT_SYSTEM_PROMPT_BN
+          : lang === 'banglish'
+          ? CHAT_SYSTEM_PROMPT_BANGLISH
+          : CHAT_SYSTEM_PROMPT_EN;
+
+      const result = await executeLLMWithFallback({
+        contents: contentsPayload,
+        systemInstruction,
+        maxOutputTokens: 1500,
+        temperature: 0.7,
+      });
+
+      if (result.text) {
+        aiResponseText = result.text;
+      }
+    } catch {
+      // Fallback below
     }
 
-    // Fallback response if Gemini key missing or failed
+    // Fallback response if both Gemini and Groq are unavailable
     if (!aiResponseText) {
       if (lang === 'bn') {
         aiResponseText = `প্রিয় ভাই/বোন, আপনার প্রশ্নটি অত্যন্ত গুরুত্বপূর্ণ ও জীবনঘনিষ্ঠ। 
